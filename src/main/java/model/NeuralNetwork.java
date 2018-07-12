@@ -16,6 +16,8 @@ public class NeuralNetwork {
     private List<NeuralLayer> layers;
     Logger log = LogManager.getLogger(NeuralNetwork.class);
 
+    // region construction
+
     /**
      * Constructs a new empty neural network
      */
@@ -42,6 +44,8 @@ public class NeuralNetwork {
         log.info("Added layer to network at index " + index);
     }
 
+    // endregion
+
     /**
      * Train the network using the inputs, expected outputs and parameters
      * @param inputs for training - must be same number of outputs
@@ -65,7 +69,7 @@ public class NeuralNetwork {
                 " instances and learning rate of " + learningRate);
         for (int epoch = 0; epoch < epochs; epoch++) {
             log.debug("Starting epoch " + epoch);
-            for (int instance = 0; instance < batchSize; instance++) {
+            for (int instanceCounter = 0; instanceCounter < batchSize; instanceCounter++) {
                 input(inputs.get(trainIndex));
                 feedForward();
                 calculateError(outputs.get(trainIndex), cost);

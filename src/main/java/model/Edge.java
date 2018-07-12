@@ -16,6 +16,8 @@ public class Edge {
     private double accumulatedError = 0;
     private int batchSize = 0;
 
+    // region construction
+
     /**
      * Directed Edge from source neuron to destination neuron with random weight
      * @param sourceNeuron source neuron of the edge
@@ -47,6 +49,9 @@ public class Edge {
         this.destinationNeuron = destinationNeuron;
     }
 
+    // endregion
+    // region getters & setters
+
     public double getWeight() {
         return weight;
     }
@@ -67,12 +72,18 @@ public class Edge {
         this.destinationNeuron = destinationNeuron;
     }
 
+    // endregion
+    // region forward
+
     /**
      * Feed forward the output of source neuron to destination neuron
      */
     public void feedForward() {
-        output(sourceNeuron.getOutput() * weight);
+            destinationNeuron.input(sourceNeuron.getOutput() * weight);
     }
+
+    // endregion
+    // region backwards
 
     /**
      * Back propagate the error of the destination neuron to source neuron
@@ -94,7 +105,5 @@ public class Edge {
         batchSize = 0;
     }
 
-    private void output(double output) {
-        destinationNeuron.input(output);
-    }
+    // endregion
 }

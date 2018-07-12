@@ -15,12 +15,14 @@ public class NeuralLayer {
     private Set<Neuron> neurons;
     private Set<BiasNeuron> biases;
 
+    // region construction
+
     /**
      * Constructs a new empty neural layer
      */
     public NeuralLayer() {
-        neurons = new LinkedHashSet<Neuron>();
-        biases = new LinkedHashSet<BiasNeuron>();
+        neurons = new LinkedHashSet<>();
+        biases = new LinkedHashSet<>();
     }
 
     /**
@@ -39,6 +41,8 @@ public class NeuralLayer {
         biases.add(neuron);
     }
 
+    // endregion
+    // region getters
     /**
      * Get all neron including bias
      * @return collections of all neurons
@@ -57,6 +61,8 @@ public class NeuralLayer {
         return neurons;
     }
 
+    // endregion
+    // region forward
     /**
      * Input data into layer
      * @param inputs data to layer
@@ -84,6 +90,8 @@ public class NeuralLayer {
         }
     }
 
+    // endregion
+    // region output
     /**
      * Get the output of the last performed feed forward
      * @return output of the layer
@@ -97,6 +105,8 @@ public class NeuralLayer {
         return outputs;
     }
 
+    // endregion
+    // region backwards
     /**
      * Calculate the error of the layer from the expected results and the cost function
      * @param expected results of the layer
@@ -131,4 +141,6 @@ public class NeuralLayer {
             neuron.fixBackwardsWeights(learningRate);
         }
     }
+
+    // endregion
 }

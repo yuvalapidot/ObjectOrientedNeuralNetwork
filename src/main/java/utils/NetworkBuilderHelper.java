@@ -16,6 +16,15 @@ public class NetworkBuilderHelper {
 
     /**
      * Connect two layers from source to destination in a fully connected manner
+     * @param sourceLayer from which to connect the edges
+     * @param destinationLayer to which to connect the edges
+     */
+    public static void connectLayers(NeuralLayer sourceLayer, NeuralLayer destinationLayer) {
+        connectLayers(new Random(), sourceLayer, destinationLayer);
+    }
+
+    /**
+     * Connect two layers from source to destination in a fully connected manner
      * @param random object to choose randomly
      * @param sourceLayer from which to connect the edges
      * @param destinationLayer to which to connect the edges
