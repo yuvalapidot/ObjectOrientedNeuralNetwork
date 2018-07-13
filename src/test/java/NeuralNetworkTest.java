@@ -2,7 +2,7 @@ import model.NeuralLayer;
 import model.NeuralNetwork;
 import model.activation.ActivationFunction;
 import model.activation.SigmoidActivationFunction;
-import model.loss.QuadraticCostfunction;
+import model.loss.QuadraticCostFunction;
 import org.junit.Test;
 import utils.NetworkBuilderHelper;
 
@@ -34,7 +34,7 @@ public class NeuralNetworkTest {
                 new double[] {xor01},
                 new double[] {xor10},
                 new double[] {xor11});
-        network.train(trainInputs, trainOutputs, new QuadraticCostfunction(), 100000, trainInputs.size(), 0.1);
+        network.train(trainInputs, trainOutputs, new QuadraticCostFunction(), 100000, trainInputs.size(), 0.1);
         double result00 = network.result(new double[] {0, 0})[0];
         assertEquals(xor00, Math.round(result00));
         double result10 = network.result(new double[] {1, 0})[0];
@@ -62,7 +62,7 @@ public class NeuralNetworkTest {
                 new double[] {and01},
                 new double[] {and10},
                 new double[] {and11});
-        network.train(trainInputs, trainOutputs, new QuadraticCostfunction(), 100000, trainInputs.size(), 0.1);
+        network.train(trainInputs, trainOutputs, new QuadraticCostFunction(), 100000, trainInputs.size(), 0.1);
         double result00 = network.result(new double[] {0, 0})[0];
         assertEquals(and00, Math.round(result00));
         double result10 = network.result(new double[] {1, 0})[0];
@@ -90,7 +90,7 @@ public class NeuralNetworkTest {
                 new double[] {or01},
                 new double[] {or10},
                 new double[] {or11});
-        network.train(trainInputs, trainOutputs, new QuadraticCostfunction(), 100000, trainInputs.size(), 0.1);
+        network.train(trainInputs, trainOutputs, new QuadraticCostFunction(), 100000, trainInputs.size(), 0.1);
         double result00 = network.result(new double[] {0, 0})[0];
         assertEquals(or00, Math.round(result00));
         double result10 = network.result(new double[] {1, 0})[0];
@@ -130,7 +130,7 @@ public class NeuralNetworkTest {
                 new double[] {or10and1},
                 new double[] {or01and1},
                 new double[] {or11and1});
-        network.train(trainInputs, trainOutputs, new QuadraticCostfunction(), 100000, trainInputs.size(), 0.1);
+        network.train(trainInputs, trainOutputs, new QuadraticCostFunction(), 100000, trainInputs.size(), 0.1);
         double result000 = network.result(new double[] {0, 0, 0})[0];
         assertEquals(or00and0, Math.round(result000));
         double result100 = network.result(new double[] {1, 0, 0})[0];

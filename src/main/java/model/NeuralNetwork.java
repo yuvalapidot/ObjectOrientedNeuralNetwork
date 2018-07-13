@@ -14,7 +14,7 @@ import java.util.*;
 public class NeuralNetwork {
 
     private List<NeuralLayer> layers;
-    Logger log = LogManager.getLogger(NeuralNetwork.class);
+    private Logger log = LogManager.getLogger(NeuralNetwork.class);
 
     // region construction
 
@@ -22,7 +22,7 @@ public class NeuralNetwork {
      * Constructs a new empty neural network
      */
     public NeuralNetwork() {
-        layers = new ArrayList<NeuralLayer>();
+        layers = new ArrayList<>();
     }
 
     /**

@@ -3,7 +3,7 @@ package model.loss;
 /**
  * Created by yuvalapidot.
  */
-public class QuadraticCostfunction implements CostFunction {
+public class QuadraticCostFunction implements CostFunction {
 
     @Override
     public double cost(double expected, double actual) {
